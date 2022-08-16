@@ -1,4 +1,28 @@
+- [x ] Server setup (localhost:5000)
+- [ x] SQL for table (CREATE TABLE)
+- [ x] Insert sample data
 
+### READ (GET)
+
+- [ x] GET route on server (router optional)
+- [ x] Ready now function
+- [ ] Client side AJAX for GET
+- [ ] Display data on the DOM
+
+### CREATE (POST)
+
+- [ ] HTML form to collect data
+- [ ] Values from an input on click
+- [ ] Client side AJAX for POST
+- [ ] POST route on server
+- [ ] INSERT INTO the database
+- [ ] Refresh data on success
+
+### DELETE
+
+...
+
+### UPDATE (PUT)
 ## Weekend Challenge: SQL To-Do List
 
 Hello Primers! 
