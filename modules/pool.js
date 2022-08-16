@@ -25,7 +25,7 @@ if (process.env.DATABASE_URL) {
     config = {
         host: 'localhost', // home 127.0.01
         port: 5432,
-        database: 'to_do_list', // CHANGE THIS LINE to match your local database name!
+        database: 'weekend-to-do-app', // CHANGE THIS LINE to match your local database name!
     };
 }
 
