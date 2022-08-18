@@ -3,8 +3,25 @@ console.log('Hello World');
 $(document).ready(onReady);
 
 function onReady() {
+   $('#task-submit').on('click', sendTaskToServer);
     getTasks();
 }
+
+function sendTaskToServer() {
+    $.ajax({
+        type: 'POST',
+        url: '/task',
+        data: {
+            task: $('#tasks').val()
+        }
+    }).then(function (response) {
+        getTasks();
+    })
+}
+
+
+
+
 
 function getTasks() {
     $.ajax({

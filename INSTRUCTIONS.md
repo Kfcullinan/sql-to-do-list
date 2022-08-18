@@ -11,7 +11,7 @@
 
 ### CREATE (POST)
 
-- [ ] HTML form to collect data
+- [ x] HTML form to collect data
 - [ ] Values from an input on click
 - [ ] Client side AJAX for POST
 - [ x] POST route on server
