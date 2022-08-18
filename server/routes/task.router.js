@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const task = req.body;
+    const tasks = req.body;
+    console.log('data from client', tasks);
     const queryText = `INSERT INTO "tasks" ("task", "completed")
                                     VALUES ($1, $2);`  
     pool.query(queryText, [tasks.task, tasks.completed])
