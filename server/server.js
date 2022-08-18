@@ -1,9 +1,14 @@
 const express = require('express');
+
 const app = express();
-const port = process.env.PORT || 5003;
+const PORT = 5003;
 
 app.use(express.static('server/public'));
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, () => {
-console.log('listening on port', port)
+const taskRouter = require('./routes/task.router.js');
+app.use('/task', taskRouter);
+
+app.listen(PORT, () => {
+console.log('listening on port', PORT)
 });
