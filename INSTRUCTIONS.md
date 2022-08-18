@@ -6,7 +6,7 @@
 
 - [ x] GET route on server (router optional)
 - [ x] Ready now function
-- [ ] Client side AJAX for GET
+- [ x] Client side AJAX for GET
 - [ ] Display data on the DOM
 
 ### CREATE (POST)
@@ -14,7 +14,7 @@
 - [ ] HTML form to collect data
 - [ ] Values from an input on click
 - [ ] Client side AJAX for POST
-- [ ] POST route on server
+- [ x] POST route on server
 - [ ] INSERT INTO the database
 - [ ] Refresh data on success
 
