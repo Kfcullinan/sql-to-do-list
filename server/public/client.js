@@ -42,7 +42,9 @@ function getTasks() {
             <td>${tasks.id}</td>
             <td>${tasks.task}</td>
             <td>${tasks.completed}</td>
-
+                <td>
+                    <button class="task-completed" data-id="${tasks.id}">Delete</button>
+                    </td>
             </tr>
 
 
