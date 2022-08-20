@@ -31,7 +31,26 @@ router.post('/', (req, res) => {
      });                                  
 });
 
-
-
+router.delete('/:id', (req, res) => {
+    const queryText ='DELETE FROM "task" WHERE "id" = $1;';
+    pool.query(queryText, [req.params.id]).then((results) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in Task Delete', error);
+        res.sendStatus(500);
+    })
+})
+ //put
+ router.put('/:id', (req, res) => {
+    const taskId = req.params.id;
+    console.log(req.body);
+    //const queryText = `UPDATE "task" SET "votes" = "votes" + 1 WHERE "id" = $1;`;
+    pool.query(queryText, [taskId]).then((results) => {
+        res.sendStatus(200);
+ }).catch((error) => {
+    console.log('Error in Put task', error);
+    res.sendStatus(500);
+ });
+});
 
 module.exports = router;
