@@ -4,6 +4,8 @@ $(document).ready(onReady);
 
 function onReady() {
    $('#task-submit').on('click', sendTaskToServer);
+   $('#tasksTableBody').on('click', '.deleteButton', deleteClickListener);
+   // $('#tasksTableBody').on('click', '.updateButton', updateTaskButton);
     getTasks();
 }
 
@@ -35,15 +37,19 @@ function getTasks() {
         $('#tasksTableBody').empty();
         for (let i = 0; i <response.length; i++) {
             let tasks = response[i];
-            //todo: conditional styling
+            let taskClass = ''; //default is no styling
+            if (tasks.completed) {
+            taskClass = 'task-complete' //if complete apply css
+            }
             console.log('task', tasks.task);
             $('#tasksTableBody').append(`
-            <tr>
+            <tr class="${taskClass}">
             <td>${tasks.id}</td>
             <td>${tasks.task}</td>
             <td>${tasks.completed}</td>
                 <td>
-                    <button class="task-completed" data-id="${tasks.id}">Delete</button>
+                   <button type="button" class="updateButton" data-id="${tasks.id}">Task Completed?</button>
+                    <button class="deleteButton" data-id="${tasks.id}">Delete</button>
                     </td>
             </tr>
 
@@ -53,3 +59,15 @@ function getTasks() {
         }
     })
 }
+
+//delete button created
+function deleteClickListener() {
+    console.log('delete button clicked');
+    $.ajax({
+        method: 'DELETE',
+        url: '/task/' + $(this).data().id
+    }).then(() => {
+       
+        getTasks()
+    });
+};

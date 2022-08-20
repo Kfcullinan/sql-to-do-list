@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    const queryText ='DELETE FROM "task" WHERE "id" = $1;';
+    const queryText ='DELETE FROM "tasks" WHERE "id" = $1;';
     pool.query(queryText, [req.params.id]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
