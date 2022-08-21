@@ -5,7 +5,7 @@ $(document).ready(onReady);
 function onReady() {
    $('#task-submit').on('click', sendTaskToServer);
    $('#tasksTableBody').on('click', '.deleteButton', deleteClickListener);
-   // $('#tasksTableBody').on('click', '.updateButton', updateTaskButton);
+    $('#tasksTableBody').on('click', '.updateButton', updateTaskButton);
     getTasks();
 }
 
@@ -70,4 +70,17 @@ function deleteClickListener() {
        
         getTasks()
     });
+};
+
+function updateTaskButton() {
+    console.log('update button clicked');
+    const completedId = $(this).data('.id')
+    $.ajax({
+        type:'PUT',
+        url: '/task/'+ $(this).data().id
+        
+    }).then(() => {
+        getTasks()
+    });
+  
 };
