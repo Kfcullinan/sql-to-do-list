@@ -13,10 +13,10 @@
 
 - [ x] HTML form to collect data
 - [ x] Values from an input on click
-- [ ] Client side AJAX for POST
+- [ x] Client side AJAX for POST
 - [ x] POST route on server
-- [ ] INSERT INTO the database
-- [ ] Refresh data on success
+- [ x] INSERT INTO the database
+- [ x] Refresh data on success
 
 ### DELETE
 
